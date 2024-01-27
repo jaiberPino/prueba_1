@@ -7,10 +7,10 @@
 trigger:
 - main
 
-pool: 
- pool:
+pool:
+  name: Azure Pipelines
   demands:
-  - agent.name -equals deploy-05-agent1 Hosted Agent
+  - agent.name -equals Hosted Agent
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
