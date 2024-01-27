@@ -2,15 +2,13 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+#  vmImage: ubuntu-latest
 
 trigger:
 - main
-
-pool:
-  vmImage: ubuntu-latest   
-  pool: alm-aws-pool
-  demands:
-  - agent.name -equals deploy-05-agent1
+pool: 
+ name: Azure Pipelines
+ demands: agent.name -equals Hosted Agent
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
