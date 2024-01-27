@@ -7,8 +7,10 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
-
+  vmImage: ubuntu-latest   
+  pool: alm-aws-pool
+  demands:
+  - agent.name -equals deploy-05-agent1
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
